@@ -31,8 +31,6 @@ df.groupby('title')['rating'].mean().sort_values(ascending=False).head()
 
 df.groupby('title')['rating'].count().sort_values(ascending=False).head()
 
-df.groupby('title')['rating'].mean().sort_values(ascending=False).head()
-
 ratings = pd.DataFrame(df.groupby('title')['rating'].mean())
 ratings.head()
 
@@ -40,7 +38,7 @@ ratings['num of ratings'] = pd.DataFrame(df.groupby('title')['rating'].count())
 ratings.head()
 
 plt.figure(figsize=(10,4))
-ratings['num of ratings'].hist(bins=70, range=(30,200))
+ratings['num of ratings'].hist(bins=60, range=(20,200))
 
 plt.figure(figsize=(10,4))
 ratings['rating'].hist(bins=70)
